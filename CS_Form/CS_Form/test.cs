@@ -4,36 +4,45 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 
 
 namespace CS_Form
 {
-    internal class TestButton : Button
+   class TestButton:Button
     {
-        /// <summary>
-        /// コンストラクタ
-        /// クラスを作成したときに呼び出される
-        /// </summary>
-        public TestButton(int id, int x, int y, int width, int height)
+        //<summary>
+        //コンストラクタ
+        //クラスを生成した時に呼び出される
+        public Test(int  x, int y,int Width,int Height)
         {
-            //ClickイベントにOnClick関数を登録
-            //ボタンをクリックした時に登録した関数を実行します
+            //clickイベントにOnClick関数を登録
+            //ボタンをクリックしたときに登録した関数を実行します
             Click += OnClick;
 
-            //テキスト内にボタンを表示させる
-            Text = id.ToString();
+               Text = "ボタン";
 
-            Location = new Point(x, y);
+            Location = new Point(x,y);
 
-            Size = new Size(width, height);
+            Size = new Size(Width, Height);
+
+
+
+
+
+
 
         }
+        //<summary>
+        //ボタンをクリックした才の処理を記述する
+        //＜/summary>
+        
+          
 
-        public void OnClick(object sender, EventArgs s)
+        public void OnClick(object sender, EventArgs e)
         {
-            MessageBox.Show(Text);
+            MessageBox.Show("明日");
         }
+       
     }
 }
