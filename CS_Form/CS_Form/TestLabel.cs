@@ -29,7 +29,15 @@ namespace CS_Form
             Size = new Size(width, height);
 
         }
-
+       /// <summary>
+       /// ラベルの文字更新関数
+       /// </summary>
+       /// <param name="str"></param>
+       public void TextUpdete(string str)
+        {
+            Text = str;
+        }
+        
         public void OnClick(object sender, EventArgs s)
         {
             MessageBox.Show(Text);
