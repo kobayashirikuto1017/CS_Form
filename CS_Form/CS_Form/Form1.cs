@@ -20,8 +20,13 @@ namespace CS_Form
                 TestButton testButton = new TestButton(i, (i % 5) * 100, (i / 5) * 100, 100, 100);
                 Controls.Add(testButton);
             }
-               
-           
+
+            TestLabel testLabel = new TestLabel("ラベルです", 10, 300, 100, 500);
+            Controls.Add((testLabel));
+           // Label label = new Label();
+            //label.Location = new Point(30, 400);
+           // label.Text = "ラベルです";
+           // Control.Add(label);
         }
         
         private void Form1_Load(object sender, EventArgs e)
