@@ -15,15 +15,16 @@ namespace CS_Form
         public Form1()
         {
             InitializeComponent();
+
             for (int i = 0; i < 10; i++)
             {
-                TestButton testButton = new TestButton(i, (i % 5) * 100, (i / 5) * 100, 100, 100);
+                TestButton testButton = new TestButton(i * 50, 0, 50, 50);
+
                 Controls.Add(testButton);
             }
-               
-           
+            
         }
-        
+            
         private void Form1_Load(object sender, EventArgs e)
         {
 
