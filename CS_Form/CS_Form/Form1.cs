@@ -16,7 +16,9 @@ namespace CS_Form
     {
         TestLabel _testLabel;
 
-        TestTextBox _textBox;
+        public   TestTextBox _textBox;
+
+        TestButton _testButton;
 
         public Form1()
         {
@@ -44,6 +46,13 @@ namespace CS_Form
             _textBox = new TestTextBox("テキストボックスです",10,250,100,700);
 
 
+            if(_testButton != null)
+            {
+                _testButton.Click += AnClick;
+            }
+            
+
+
 
 
             Controls.Add(_textBox);
@@ -56,19 +65,29 @@ namespace CS_Form
         /// ラベルの文字を更新する
         /// </summary>
         /// <param name="str"></param>
+        /// 
+        //①ボタンの内容をラベルに入れる
         public void LabelTextUpdate(string str)
         {
             _testLabel.TextUpdete(str);
         }
-
-
-        //テキストの変換に用いる
-        public void TextBoxTextUpdate(string str)
+        
+        public void BoxTextUpdate (string str)
         {
-            _textBox.TextUpdete(str);
+             _textBox.TextUpdete(str);  
         }
+        private void AnClick(object sendar , EventArgs e)
+        {
+            _testButton.Text = _textBox.Text;
+        }
+       
+
+        
+
+       
 
 
+       
 
 
         private void Form1_Load(object sender, EventArgs e)

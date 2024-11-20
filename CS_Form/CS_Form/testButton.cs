@@ -13,7 +13,7 @@ namespace CS_Form
     internal class TestButton : Button
     {
         Form1 _form1;
-
+        TestTextBox _textBox;
         /// <summary>
         /// コンストラクタ
         /// クラスを作成したときに呼び出される
@@ -24,8 +24,9 @@ namespace CS_Form
 
             //ClickイベントにOnClick関数を登録
             //ボタンをクリックした時に登録した関数を実行します
-            Click += OnClick;
-
+           
+            Click += AnClick;
+            
             //テキスト内にボタンを表示させる
 
             string[] nihongo = new string[10] { "あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ" };
@@ -33,15 +34,36 @@ namespace CS_Form
 
 
             Text = nihongo[i];
+
             Location = new Point(x, y);
 
             Size = new Size(width, height);
 
+
+
         }
 
-        public void OnClick(object sender, EventArgs s)
+
+       
+        
+        public void AnClick(object sender , EventArgs s)
         {
-            _form1.LabelTextUpdate(Text);  
+            string currenButtonTest = Text;
+
+            Text = _form1._textBox.Text;
+
+            _form1._textBox.Text = currenButtonTest;
+
+            _form1.LabelTextUpdate(currenButtonTest);
+
         }
+
+
+
+
+       
+
+
+
     }
 }
