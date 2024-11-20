@@ -18,6 +18,7 @@ namespace CS_Form
         /// </summary>
         public TestLabel(string str, int x, int y, int width, int height)
         {
+           
 
             //ラベル内にボタンを表示させる
             Text = str;
@@ -37,10 +38,7 @@ namespace CS_Form
         {
             Text = str;
         }
+
         
-        public void OnClick(object sender, EventArgs s)
-        {
-            MessageBox.Show(Text);
-        }
     }
 }
